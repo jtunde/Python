@@ -1,0 +1,127 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled15.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyOe+K33Kymg3oQgVVJt+12z",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jtunde/Python/blob/main/ss2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "0UZhiX18uPUp"
+      },
+      "outputs": [],
+      "source": [
+        "import pandas as pd\n",
+        "import numpy\n",
+        "from numpy import array\n",
+        "import matplotlib.pyplot as plt\n",
+        "from keras.models import Sequential\n",
+        "from keras.layers import Dense\n",
+        "\n",
+        "from sklearn.ensemble import RandomForestClassifier"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nls_columns = [\n",
+        "    'duration',\n",
+        "    'protocol_type',\n",
+        "    'service',\n",
+        "    'flag',\n",
+        "    'src_bytes',\n",
+        "    'dst_bytes',\n",
+        "    'land',\n",
+        "    'wrong_fragment',\n",
+        "    'urgent',\n",
+        "    'hot',\n",
+        "    'num_failed_logins',\n",
+        "    'logged_in',\n",
+        "    'num_compromised',\n",
+        "    'root_shell',\n",
+        "    'su_attempted',\n",
+        "    'num_root',\n",
+        "    'num_file_creations',\n",
+        "    'num_shells',\n",
+        "    'num_access_files',\n",
+        "    'num_outbound_cmds',\n",
+        "    'is_host_login',\n",
+        "    'is_guest_login',\n",
+        "    'count',\n",
+        "    'srv_count',\n",
+        "    'serror_rate',\n",
+        "    'srv_serror_rate',\n",
+        "    'rerror_rate',\n",
+        "    'srv_rerror_rate',\n",
+        "    'same_srv_rate',\n",
+        "    'diff_srv_rate',\n",
+        "    'srv_diff_host_rate',\n",
+        "    'dst_host_count',\n",
+        "    'dst_host_srv_count',\n",
+        "    'dst_host_same_srv_rate',\n",
+        "    'dst_host_diff_srv_rate',\n",
+        "    'dst_host_same_src_port_rate',\n",
+        "    'dst_host_srv_diff_host_rate',\n",
+        "    'dst_host_serror_rate',\n",
+        "    'dst_host_srv_serror_rate',\n",
+        "    'dst_host_rerror_rate',\n",
+        "    'dst_host_srv_rerror_rate',\n",
+        "    'class']\n",
+        "\n",
+        "CLASSIFIER_COLUMN = 41"
+      ],
+      "metadata": {
+        "id": "NK7FleDuvRZG"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from google.colab import drive\n",
+        "drive.mount('/content/drive')"
+      ],
+      "metadata": {
+        "id": "LzII0a2hvlZ4"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df = pd.read_csv('drive/MyDrive/data.csv', header=None)\n"
+      ],
+      "metadata": {
+        "id": "6o40ppKCvp2v"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
